@@ -23,7 +23,7 @@ const Header = () => {
           <Link to="/">Better Call Saul</Link>
         </Typography>
 
-        <nav style={{ flexGrow: 1, alignItems: 'center' }}>
+        <nav style={{alignItems: 'center' }}>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/contacts">Contacts</NavLink>
 

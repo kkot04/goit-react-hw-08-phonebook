@@ -20,7 +20,7 @@ export const LogIn = () => {
         toast.success(`Welcome, ${res.user.name}!`);
       })
       .catch(() => {
-        toast.error(`Who are you?`);
+        toast.error(`Not found`);
       });
     }
     return (
