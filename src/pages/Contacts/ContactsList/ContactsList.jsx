@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import { ContactsItem } from '../ContactsItem/ContactsItem.jsx';
 import s from './ContactsList.module.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchContactsThunk } from 'store/operations.js';
-import { selectContacts, selecFilter, selectError } from 'store/selector.js';
+import { fetchContactsThunk } from 'store/contacts/operations.js';
+import { selectContacts, selecFilter, selectError } from 'store/contacts/selector.js';
 
-export const ContactsList = ({children}) => {
+export const ContactsList = () => {
   const contacts = useSelector(selectContacts);
   const filter = useSelector(selecFilter);
   const error = useSelector(selectError);
@@ -23,7 +23,7 @@ export const ContactsList = ({children}) => {
 
   return (
     <>
-      {children}
+      
       {filteredContacts.length === 0 ? (
         <p className={s.errorMessage}>No contacts match your search</p>
       ) : (
