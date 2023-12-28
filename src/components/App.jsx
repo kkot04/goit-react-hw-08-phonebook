@@ -6,7 +6,7 @@ import { Section } from "pages/Contacts/Section/Section";
 import Header from './Header/Header'
 import Register from "pages/Register/Register";
 import LogIn from "pages/LogIn/LogIn";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { refreshThunk } from "store/auth/operations";
 import { useEffect } from 'react';
 import Home from "pages/Home/Home";
