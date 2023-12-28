@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { Slice } from './contacts/slice';
-import { authReducer } from './auth/authSlice';
+import phonebookSlice from './contacts/phonebookSlice';
+import { authReducer } from './auth/slice';
+
 import {
   persistStore,
   persistReducer,
@@ -13,7 +14,6 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-
 const persistConfig = {
   key: 'auth',
   version: 1,
@@ -25,7 +25,7 @@ const persistedReducer = persistReducer(persistConfig, authReducer);
 
 export const store = configureStore({
   reducer: {
-    phonebook: Slice,
+    phonebook: phonebookSlice,
     auth: persistedReducer,
   },
   middleware: getDefaultMiddleware =>
@@ -34,11 +34,7 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-}); 
+});
 
 export const persistor = persistStore(store);
-
-
-
-
 

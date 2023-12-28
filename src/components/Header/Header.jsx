@@ -1,7 +1,7 @@
 import React from "react";
 import {  useSelector } from "react-redux";
 import { NavLink , Link} from 'react-router-dom';
-import { selectIsLoggedIn } from "store/auth/selector";
+import { selectIsLoggedIn } from "store/auth/selectors";
 import { AppBar, Box, Toolbar, Typography } from "@mui/material";
 import UserMenu from "components/UserMenu/UserMenu";
 
@@ -20,12 +20,12 @@ const Header = () => {
           component="div"
           style={{ flexGrow: 1 }}
         >
-          <Link to="/">Better Call Saul</Link>
+          <Link to="/">Phonebook</Link>
         </Typography>
 
         <nav style={{alignItems: 'center' }}>
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/contacts">Contacts</NavLink>
+          {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
 
           {!isLoggedIn && (
             <>

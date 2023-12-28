@@ -1,18 +1,18 @@
 import { Route, Routes } from "react-router-dom";
-import { ContactForm } from "pages/Contacts/ContactForm/ContactForm";
-import { ContactsList } from "pages/Contacts/ContactsList/ContactsList";
-import { Filter } from "pages/Contacts/Filter/Filter";
-import { Section } from "pages/Contacts/Section/Section";
+import { ContactForm } from "components/ContactForm/ContactForm";
+import { ContactList } from "components/ContactList/ContactList";
+import { Filter } from "components/Filter/Filter";
+import { Section } from "components/Section/Section";
 import Header from './Header/Header'
 import Register from "pages/Register/Register";
-import LogIn from "pages/LogIn/LogIn";
+import LogIn from "pages/Login/Login";
 import { useDispatch } from 'react-redux';
-import { refreshThunk } from "store/auth/operations";
+import { refreshThunk } from "store/auth/operation";
 import { useEffect } from 'react';
 import Home from "pages/Home/Home";
 import NotFound from "pages/NotFound/NotFound";
-import { PrivateRoute } from "routes/PrivateRoute";
-import { PublicRoute } from "routes/PublicRoute";
+import { PrivateRoute } from "routesConfig/PrivateRoute";
+import { PublicRoute } from "routesConfig/PublicRoute";
 
 
 
@@ -39,7 +39,7 @@ export const App = () => {
                 </Section>
                 <Section title={'Contacts'}>
                   <Filter />
-                  <ContactsList />
+                  <ContactList />
                 </Section>
               </PrivateRoute>
             </>
