@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { addContasctThunk } from '../../store/contacts/operations.js';
 import { getContacts } from '../../store/contacts/selector.js';
-import { Button, TextField } from '@mui/material';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
@@ -22,7 +21,7 @@ export const ContactForm = () => {
 
   return (
     <div autoComplete="off" onSubmit={createContact}>
-      <TextField
+      <input
         type="text"
         name="name"
         label="Contact name"
@@ -31,7 +30,7 @@ export const ContactForm = () => {
         required
       />
 
-      <TextField
+      <input
         type="tel"
         name="number"
         label="Phone number"
@@ -40,9 +39,9 @@ export const ContactForm = () => {
         required
       />
 
-      <Button type="submit" variant="contained">
+      <button type="submit">
         Add contact
-      </Button>
+      </button>
     </div>
   );
 };
