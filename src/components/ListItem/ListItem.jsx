@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteContasctThunk } from 'store/contacts/operations';
+import s from './ContactsItem.module.css'
 
 export const ListItem = ({ name, number, id }) => {
   const dispatch = useDispatch();
@@ -12,6 +13,7 @@ export const ListItem = ({ name, number, id }) => {
       </div>
 
       <button
+    className={s.deleteBtn}
         type="button"
         onClick={() => dispatch(deleteContasctThunk(id))}
       >

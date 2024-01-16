@@ -20,26 +20,20 @@ export const ContactForm = () => {
   };
 
   return (
-    <div autoComplete="off" onSubmit={createContact}>
+    <div onSubmit={createContact}>
       <input
         type="text"
         name="name"
-        label="Contact name"
-        variant="standard"
-        color="warning"
-        required
-      />
+        placeholder="Contact name"
+        required/>
 
       <input
         type="tel"
         name="number"
-        label="Phone number"
-        variant="standard"
-        color="warning"
-        required
-      />
+        placeholder="Phone number"
+        required/>
 
-      <button type="submit">
+      <button   onSubmit={createContact} type="submit">
         Add contact
       </button>
     </div>

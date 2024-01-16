@@ -1,22 +1,19 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setFilter } from '../../store/contacts/phonebookSlice.js';
-// import { InputFilter } from './StyledFilter';
-import { TextField } from '@mui/material';
-
+import s from './Filter.module.css'
 export const Filter = () => {
   const dispatch = useDispatch();
   const handleFilter = event => {
     dispatch(setFilter(event.target.value));
   };
   return (
-    <TextField
-      style={{ width: '100%' }}
+    <input 
+    className={s.input}
       onChange={handleFilter}
       type="text"
-      label="Search"
-      variant="standard"
-      color="warning"
+      placeholder="Search"
+      
     />
   );
 };

@@ -26,7 +26,7 @@ export const ContactList = () => {
   return (
     <>
       {filteredContacts.length === 0 ? (
-        <alert>No contacts match your search</alert>
+        <alert>No contacts</alert>
       ) : (
         <ul>
           {filteredContacts.map(({ id, name, number }) => (
